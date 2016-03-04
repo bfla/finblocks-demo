@@ -1,10 +1,15 @@
+remove = (chat) ->
+  console.log 'TODO - add delete function for ideas'
+  # Meteor.call('removeChat', chat._id);
 
 ListIdeasCtrl = ($scope, $reactive, $meteor) ->
   $reactive(@).attach($scope)
 
-  # @helpers(
-  #   data: -> return Ideas.find()
-  # )
+  @remove = remove
+
+  @helpers(
+    ideas: -> return Ideas.find()
+  )
 
 angular
   .module('Finblocks')
