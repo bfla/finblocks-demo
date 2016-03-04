@@ -1,0 +1,6 @@
+# Don't commit private information
+*dev-settings.json
+*prod-settings.json
+
+# For Macs
+*.DS_Store
