@@ -1,0 +1,22 @@
+<ion-view view-title='Create idea'>
+  <ion-content>
+    <form class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Stock symbol</span>
+        <input 
+          type="text" 
+          placeholder="WADDUP"
+          ng-model="newIdea.idea.symbol">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class='input-label'> Description </span>
+        <textarea 
+          placeholder="Briefly explain the idea"
+          ng-model="newIdea.idea.description"></textarea>
+      </label>
+    </form>
+    <button class="button button-block button-balanced" ng-click="newIdea.save()">
+      Create Idea
+    </button>
+  </ion-content>
+</ion-view>
