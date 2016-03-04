@@ -12,5 +12,5 @@ ListIdeasCtrl = ($scope, $reactive, $meteor) ->
   )
 
 angular
-  .module('Finblocks')
+  .module('finblocks')
   .controller('ListIdeasCtrl', ListIdeasCtrl);

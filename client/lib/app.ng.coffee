@@ -1,11 +1,11 @@
 angular
-  .module('Finblocks', [
+  .module('finblocks', [
     'angular-meteor'
     'ionic'
     'angularMoment'
   ])
 
-onReady = -> angular.bootstrap(document, ['Finblocks'])
+onReady = -> angular.bootstrap(document, ['finblocks'])
 
 # Wait for the client platform to start before bootstrapping angular.
 if Meteor.isCordova
