@@ -1,11 +1,11 @@
 
 config = ($stateProvider, $urlRouterProvider) ->
   $stateProvider
-    # .state('login', {
-    #   url: '/login',
-    #   templateUrl: 'client/components/users/login.html',
-    #   controller: 'LoginCtrl as login'
-    # })
+    .state('login',
+      url: '/login'
+      templateUrl: 'client/components/users/login.html'
+      controller: 'LoginCtrl as login'
+    )
     .state('list-ideas',
       url: '/ideas'
       templateUrl: 'client/components/ideas/list-ideas.html'

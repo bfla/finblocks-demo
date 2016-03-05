@@ -1,0 +1,25 @@
+$positive:  #387ef5;
+$brand-color: $positive;
+
+.bar-positive.navbar-container {
+  border: none;
+}
+
+// View with colored background
+.view-inverse {
+  background: $brand-color;
+  color: #fff;
+  h1, h2, h3, h4, h5, h6, p {
+    color: #fff;
+  }
+}
+
+// White button, inverse of the brand color
+.button-outline.button-inverse {
+  border-color: #fff;
+  color: #fff;
+  &.activated {
+    background: #fff;
+    color: $brand-color;
+  }
+}
