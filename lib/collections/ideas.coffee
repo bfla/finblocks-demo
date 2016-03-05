@@ -7,6 +7,15 @@ _schema = new SimpleSchema
     type: String
   symbol:
     type: String
+  startDate:
+    type: Date
+    optional: true
+  endDate:
+    type: Date
+    optional: true
+  expiry:
+    type: Date
+    optional: true
   createdAt:
     type: Date
     defaultValue: new Date()

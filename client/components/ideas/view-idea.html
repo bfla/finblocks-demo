@@ -1,10 +1,18 @@
 <ion-view>
   <ion-content>
-    <div class='col col-100 col-center'>
-      <h1 class='positive'>{{viewIdea.idea.symbol}} {{viewIdea.idea.symbol | stockQuote }}</h1>
+    <div class='padding text-center'>
+      <h1 class='positive'>{{viewIdea.idea.symbol}}</h1>
+      <h2>{{viewIdea.idea.symbol | stockQuote }}</h2>
+      <p>
+        <span class='balanced'>Starts {{viewIdea.idea.startDate | ideaTime}}</span>
+        <br/>
+        <span class='balanced'>Ends {{viewIdea.idea.endDate | ideaTime}}</span>
+        <br/>
+        <span class='assertive'>Expires {{viewIdea.idea.expiry | ideaTime}}</span>
+      </p>
       <p class=''>{{viewIdea.idea.description}}</p>
       <!-- <input type='text'></input> -->
-      <button class='button button-outline button-positive'> Buy </button>
+      <button class='button button-outline button-positive' ng-click="viewIdea.buy()"> Buy </button>
     </div>
   </ion-content>
 </ion-view>
