@@ -1,5 +1,5 @@
 stockQuote = ->
-  return (symbol) ->
+  (symbol) ->
     #TODO - get real stock quotes
     return 15.01
 

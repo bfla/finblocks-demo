@@ -6,11 +6,11 @@
               class="item-idea item-remove-animate item-avatar item-icon-right"
               type="item-text-wrap"
               href="#/ideas/{{idea._id}}">
-        <img ng-src="{{idea}}">
+        <img ng-src="{{idea.userId | userAvatar}}"/>
         <!-- <h2>{{idea | ideaName}}</h2> -->
         <p>{{idea.description}}</p>
         <span class="text-muted">{{idea.symbol}}</span>
-        <span class='positive'> 14.25 </span>
+        <span class='positive'> {{idea.symbol | stockQuote}} </span>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <!-- <ion-option-button class='button-assertive' ng-click='listIdeas.remove(idea)'> -->
