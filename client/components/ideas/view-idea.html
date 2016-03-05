@@ -1,18 +1,37 @@
 <ion-view>
   <ion-content>
-    <div class='padding text-center'>
-      <h1 class='positive'>{{viewIdea.idea.symbol}}</h1>
-      <h2>{{viewIdea.idea.symbol | stockQuote }}</h2>
-      <p>
-        <span class='balanced'>Starts {{viewIdea.idea.startDate | ideaTime}}</span>
-        <br/>
-        <span class='balanced'>Ends {{viewIdea.idea.endDate | ideaTime}}</span>
-        <br/>
-        <span class='assertive'>Expires {{viewIdea.idea.expiry | ideaTime}}</span>
+    <div class='padding'>
+      <h1 class='text-center positive'>{{viewIdea.idea.symbol}}</h1>
+      <h2 class='text-center positive'>{{viewIdea.idea.symbol | stockQuote }}</h2>
+      <p class='text-center positive'>
+        Start: {{viewIdea.idea.startDate | ideaTime}}
+        &nbsp;...&nbsp;
+        End: {{viewIdea.idea.endDate | ideaTime}}
       </p>
-      <p class=''>{{viewIdea.idea.description}}</p>
+      <div class="list card">
+        <div class="item item-avatar">
+          <img ng-src="{{viewIdea.idea.userId | userAvatar}}"/>
+          <h2>{{viewIdea.idea.userId | userHeader}}</h2>
+        </div>
+
+        <div class='item'>
+          <p>{{viewIdea.idea.description}}</p>
+        </div>
+
+      </div>
+
+      <!-- <div class='list list-inset'>
+        <div class='item'>Start: {{viewIdea.idea.startDate | ideaTime}}</div>
+        <div class='item'>End: {{viewIdea.idea.endDate | ideaTime}}</div>
+        <div class='item'>Expiration: {{viewIdea.idea.expiry | ideaTime}}</div>
+      </div>
+      <p class='text-center'>{{viewIdea.idea.description}}</p> -->
       <!-- <input type='text'></input> -->
-      <button class='button button-outline button-positive' ng-click="viewIdea.buy()"> Buy </button>
+      <span class='text-center'> 
+        <button 
+          class='button button-block button-outline button-positive' 
+          ng-click="viewIdea.buy()"> Buy </button>
+      </span>
     </div>
   </ion-content>
 </ion-view>

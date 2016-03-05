@@ -8,6 +8,8 @@ Meteor.startup ->
       firstName: 'Brian'
       lastName: 'Flaherty'
       avatar: 'https://randomuser.me/api/portraits/thumb/men/1.jpg'
+      jobTitle: 'Hedge fund analyst'
+      employer: 'BlueArc Capital'
 
   Accounts.createUser
     password: 'letmein123'
@@ -16,6 +18,8 @@ Meteor.startup ->
       firstName: 'Gandalf'
       lastName: 'Grey'
       avatar: 'https://randomuser.me/api/portraits/thumb/lego/2.jpg'
+      jobTitle: 'Securities Analyst'
+      employer: 'Soldmann Gachs'
 
   Accounts.createUser
     password: 'letmein123'
@@ -24,14 +28,28 @@ Meteor.startup ->
       firstName: 'Gweneth'
       lastName: 'Paltrow'
       avatar: 'https://randomuser.me/api/portraits/thumb/women/2.jpg'
+      jobTitle: 'Mutual Fund Manager'
+      employer: 'Fidelity Mutual'
 
   Accounts.createUser
     password: 'letmein123'
-    email: 'bilbo@finblocks.com'
+    email: 'frodo@finblocks.com'
     profile:
-      firstName: 'Bilbo'
+      firstName: 'Frodo'
       lastName: 'Baggins'
       avatar: 'https://randomuser.me/api/portraits/thumb/lego/4.jpg'
+      jobTitle: 'Fellow'
+      employer: 'Shire Velocity Capital'
+
+  Accounts.createUser
+    password: 'letmein123'
+    email: 'warren@finblocks.com'
+    profile:
+      firstName: 'Warren'
+      lastName: 'Buffett'
+      avatar: 'https://randomuser.me/api/portraits/thumb/men/2.jpg'
+      jobTitle: 'Top Dawg'
+      employer: 'Berkshire Hathaway'
 
   return if Ideas.findOne()
   userId = Meteor.users.findOne()._id
