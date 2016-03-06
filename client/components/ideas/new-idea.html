@@ -1,6 +1,6 @@
 <ion-view view-title='Create idea'>
   <ion-content>
-    <form class="list" ng-submit="newIdea.save()">
+    <form class="list">
       <label class="item item-input item-stacked-label">
         <span class="input-label">Stock symbol</span>
         <input 
@@ -26,9 +26,11 @@
           placeholder="Briefly explain the idea"
           ng-model="newIdea.idea.description"></textarea>
       </label>
+      <span class='padding'>
+        <a href="javascript:;" class="button button-block button-outline button-positive" ng-click="console.log('foo');">
+          Create Idea
+        </a>
+      </span>
     </form>
-    <button href='javascript:;' class="button button-block button-balanced" type="submit">
-      Create Idea
-    </button>
   </ion-content>
 </ion-view>

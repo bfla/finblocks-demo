@@ -1,20 +1,21 @@
-NewIdeaCtrl = ($scope, $reactive, $meteor, $state) ->
+save = (idea, $state) ->
+  console.log 'creating idea...', idea
+  Ideas.insert @idea, (err) ->
+    return console.log(err) if err?
+    $state.go('ideas')
+
+NewIdeaCtrl = ($scope, $reactive, $meteor, $state, $ionicPopup) ->
   $reactive(@).attach($scope)
+
   @idea =
     userId: Meteor.userId()
     startDate: new Date()
     endDate: moment().add(7, 'days').toDate()
     expiry: moment().add(7, 'days').toDate()
 
-  _handleResponse = (err) ->
-    return console.log(err) if err?
-    #TODO - close on success.
-    console.log 'success'
-    state.go('ideas')
+  @save = save.bind(@, @idea, $state)
 
-  @save = () =>
-    console.log 'creating idea...', @idea
-    Ideas.insert(@idea, _handleResponse)
+  @helpers()
 
 angular
   .module('finblocks')
