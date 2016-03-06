@@ -20,6 +20,11 @@ config = ($stateProvider, $urlRouterProvider) ->
       templateUrl: 'client/components/ideas/view-idea.html'
       controller: 'ViewIdeaCtrl as viewIdea'
     )
+    .state('list-users',
+      url: '/analysts'
+      templateUrl: 'client/components/users/list-users.html'
+      controller: 'ListUsersCtrl as listUsers'
+    )
 
   $urlRouterProvider.otherwise('/ideas')
 

@@ -19,7 +19,7 @@ Meteor.startup ->
       lastName: 'Grey'
       avatar: 'https://randomuser.me/api/portraits/thumb/lego/2.jpg'
       jobTitle: 'Securities Analyst'
-      employer: 'Soldmann Gachs'
+      employer: 'Rivendell Associates'
 
   Accounts.createUser
     password: 'letmein123'
@@ -28,8 +28,8 @@ Meteor.startup ->
       firstName: 'Gweneth'
       lastName: 'Paltrow'
       avatar: 'https://randomuser.me/api/portraits/thumb/women/2.jpg'
-      jobTitle: 'Mutual Fund Manager'
-      employer: 'Fidelity Mutual'
+      jobTitle: 'Managing Partner'
+      employer: 'Stark Industries'
 
   Accounts.createUser
     password: 'letmein123'
