@@ -7,9 +7,12 @@
               type="item-text-wrap" >
         <img ng-src="{{user._id | userAvatar}}"/>
         <h2>{{user._id | userHeader}}</h2>
-        <button 
+        <a
+          class='button button-outline button-positive'
+          href="#/users/{{user._id}}"> View </a>
+        <!-- <button 
           class='button button-outline button-positive' 
-          ng-click="listUsers.follow(user._id)"> Follow </button>
+          ng-click="listUsers.follow(user._id)"> Follow </button> -->
 
         <!-- <ion-option-button class='button-assertive' ng-click='listUsers.remove(idea)'> -->
           <!-- Delete -->

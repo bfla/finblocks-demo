@@ -25,6 +25,11 @@ config = ($stateProvider, $urlRouterProvider) ->
       templateUrl: 'client/components/users/list-users.html'
       controller: 'ListUsersCtrl as listUsers'
     )
+    .state('view-user',
+      url: '/users/:userId'
+      templateUrl: 'client/components/users/view-user.html'
+      controller: 'ViewUserCtrl as viewUser'
+    )
 
   $urlRouterProvider.otherwise('/ideas')
 config.$inject = ['$stateProvider', '$urlRouterProvider']
