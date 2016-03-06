@@ -3,13 +3,33 @@ Meteor.startup ->
 
   Accounts.createUser
     password: 'letmein123'
+    email: 'mrmarket@finblocks.com'
+    profile:
+      firstName: 'Mr'
+      lastName: 'Market'
+      avatar: 'https://randomuser.me/api/portraits/thumb/lego/2.jpg'
+      jobTitle: 'Equities Analyst'
+      employer: 'Greed & Fear Investment Strategies'
+
+  Accounts.createUser
+    password: 'letmein123'
     email: 'brian@finblocks.com'
     profile:
       firstName: 'Brian'
       lastName: 'Flaherty'
-      avatar: 'https://randomuser.me/api/portraits/thumb/men/1.jpg'
+      avatar: 'https://randomuser.me/api/portraits/thumb/men/4.jpg'
       jobTitle: 'Hedge fund analyst'
       employer: 'BlueArc Capital'
+
+  Accounts.createUser
+    password: 'letmein123'
+    email: 'ben@finblocks.com'
+    profile:
+      firstName: 'Benjamin'
+      lastName: 'Graham'
+      avatar: 'https://randomuser.me/api/portraits/thumb/men/3.jpg'
+      jobTitle: 'Intelligent Investor'
+      employer: 'Graham-Newman LLP'
 
   Accounts.createUser
     password: 'letmein123'
@@ -17,7 +37,7 @@ Meteor.startup ->
     profile:
       firstName: 'Gandalf'
       lastName: 'Grey'
-      avatar: 'https://randomuser.me/api/portraits/thumb/lego/2.jpg'
+      avatar: 'https://randomuser.me/api/portraits/thumb/lego/6.jpg'
       jobTitle: 'Securities Analyst'
       employer: 'Rivendell Associates'
 
@@ -61,7 +81,8 @@ Meteor.startup ->
     description: 'This guy always makes money. It is like magic'
     expiry: moment().add(10, 'days').toDate()
     startDate: moment().add(1, 'days').toDate()
-    endDate: moment().add(15, 'days').toDate() )
+    endDate: moment().add(15, 'days').toDate()
+  )
 
   Ideas.insert(
     userId: userId

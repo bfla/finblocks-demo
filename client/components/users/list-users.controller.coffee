@@ -6,7 +6,7 @@ ListUsersCtrl = ($scope, $reactive, $meteor, $ionicPopup) ->
   @helpers(
     users: -> return Meteor.users.find()
   )
-
+ListUsersCtrl.$inject = ['$scope', '$reactive', '$meteor', '$ionicPopup']
 
 angular
   .module('finblocks')

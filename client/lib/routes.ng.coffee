@@ -27,6 +27,7 @@ config = ($stateProvider, $urlRouterProvider) ->
     )
 
   $urlRouterProvider.otherwise('/ideas')
+config.$inject = ['$stateProvider', '$urlRouterProvider']
 
 angular
   .module('finblocks')

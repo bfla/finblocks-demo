@@ -10,6 +10,8 @@ LoginCtrl = ($scope, $state, $reactive) ->
   @loginWithLinkedIn = ->
     Meteor.loginWithLinkedIn -> $state.go('list-ideas')
 
+LoginCtrl.$inject = ['$scope', '$state', '$reactive']
+
 angular
   .module('finblocks')
   .controller('LoginCtrl', LoginCtrl)

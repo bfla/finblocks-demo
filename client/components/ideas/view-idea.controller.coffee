@@ -8,6 +8,8 @@ ViewIdeaCtrl = ($scope, $reactive, $meteor, $stateParams, $ionicPopup) ->
     idea: -> Ideas.findOne(ideaId)
   )
 
+ViewIdeaCtrl.$inject = ['$scope', '$reactive', '$meteor', '$stateParams', '$ionicPopup']
+
 angular
   .module('finblocks')
   .controller('ViewIdeaCtrl', ViewIdeaCtrl)

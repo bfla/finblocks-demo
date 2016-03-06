@@ -17,6 +17,8 @@ NewIdeaCtrl = ($scope, $reactive, $meteor, $state, $ionicPopup) ->
 
   @helpers()
 
+NewIdeaCtrl.$inject = ['$scope', '$reactive', '$meteor', '$state', '$ionicPopup']
+
 angular
   .module('finblocks')
   .controller('NewIdeaCtrl', NewIdeaCtrl)
