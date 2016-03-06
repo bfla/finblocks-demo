@@ -3,6 +3,7 @@ angular
     'angular-meteor'
     'ionic'
     'angularMoment'
+    'accounts.ui'
   ])
 
 onReady = -> angular.bootstrap(document, ['finblocks'])
