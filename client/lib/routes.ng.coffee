@@ -10,15 +10,15 @@ config = ($stateProvider, $urlRouterProvider) ->
       templateUrl: 'client/components/ideas/list-ideas.html'
       controller: 'ListIdeasCtrl as listIdeas'
     )
-    .state('view-idea',
-      url: '/ideas/:ideaId'
-      templateUrl: 'client/components/ideas/view-idea.html'
-      controller: 'ViewIdeaCtrl as viewIdea'
-    )
     .state('new-idea',
       url: '/ideas/new'
       templateUrl: 'client/components/ideas/new-idea.html'
       controller: 'NewIdeaCtrl as newIdea'
+    )
+    .state('view-idea',
+      url: '/ideas/:ideaId'
+      templateUrl: 'client/components/ideas/view-idea.html'
+      controller: 'ViewIdeaCtrl as viewIdea'
     )
 
   $urlRouterProvider.otherwise('/ideas')
