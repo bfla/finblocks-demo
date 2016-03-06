@@ -2,8 +2,9 @@ remove = (chat) ->
   console.log 'TODO - add delete function for ideas'
   # Meteor.call('removeChat', chat._id);
 
-ListIdeasCtrl = ($scope, $reactive, $meteor) ->
+ListIdeasCtrl = ($scope, $state, $reactive, $meteor) ->
   $reactive(@).attach($scope)
+  return $state.go('login') unless Meteor.userId()
 
   @remove = remove
 

@@ -1,4 +1,3 @@
-
 config = ($stateProvider, $urlRouterProvider) ->
   $stateProvider
     .state('login',
@@ -22,7 +21,7 @@ config = ($stateProvider, $urlRouterProvider) ->
       controller: 'NewIdeaCtrl as newIdea'
     )
 
-  $urlRouterProvider.otherwise('/login')
+  $urlRouterProvider.otherwise('/ideas')
 
 angular
   .module('finblocks')
