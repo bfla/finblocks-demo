@@ -1,6 +1,10 @@
 NewIdeaCtrl = ($scope, $reactive, $meteor) ->
   $reactive(@).attach($scope)
-  @idea = {userId: 'foo'}
+  @idea =
+    userId: Meteor.userId()
+    startDate: new Date()
+    endDate: new Date()
+    expiry: new Date()
 
   _handleResponse = (err) ->
     return console.log(err) if err?

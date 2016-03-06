@@ -8,6 +8,18 @@
           placeholder="WADDUP"
           ng-model="newIdea.idea.symbol">
       </label>
+      <label class='item item-input item-stacked-label'>
+        <span class='input-label'> Start date </span>
+        <input type='date' ng-model="newIdea.idea.startDate">
+      </label>
+      <label class='item item-input item-stacked-label'>
+        <span class='input-label'> End date </span>
+        <input type='date' ng-model="newIdea.idea.endDate">
+      </label>
+      <label class='item item-input item-stacked-label'>
+        <span class='input-label'> Expiry </span>
+        <input type='date' ng-model="newIdea.idea.expiry">
+      </label>
       <label class="item item-input item-stacked-label">
         <span class='input-label'> Description </span>
         <textarea 
