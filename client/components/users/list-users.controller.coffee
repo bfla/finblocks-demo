@@ -14,7 +14,9 @@ ListUsersCtrl = ($scope, $reactive, $meteor, $ionicPopup) ->
     Follows.insert(newFollow, followCb)
 
   @helpers(
-    users: -> return Meteor.users.find()
+    users: ->
+      follows = UserUtils.followsForUser(Meteor.userId())
+      return Meteor.users.find(_id: {$nin: follows})
   )
 ListUsersCtrl.$inject = ['$scope', '$reactive', '$meteor', '$ionicPopup']
 
