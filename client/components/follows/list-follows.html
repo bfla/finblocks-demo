@@ -3,23 +3,16 @@
     <ion-list>
       <ion-item
               ng-repeat="user in listFollows.users | orderBy:'+createdAt'"
-              class="item-user item-avatar item-icon-right item-button-right"
+              class="item-user item-avatar"
               type="item-text-wrap" >
         <img ng-src="{{user._id | userAvatar}}"/>
         <h2>{{user._id | userHeader}}</h2>
         <a
-          class='button button-outline button-positive'
+          class='button button-small button-outline button-positive'
           href="#/users/{{user._id}}"> View </a>
-<!--         <a
-          class='button button-outline button-positive'
-          ng-click=""> Unfollow </a> -->
-        <!-- <button 
-          class='button button-outline button-positive' 
-          ng-click="listFollows.follow(user._id)"> Follow </button> -->
-
-        <!-- <ion-option-button class='button-assertive' ng-click='listFollows.remove(idea)'> -->
-          <!-- Delete -->
-        <!-- </ion-option-button> -->
+        <button
+          class='button button-small button-outline button-assertive'
+          ng-click="listFollows.unfollow(user._id)"> Unfollow </button>
       </ion-item>
     </ion-list>
   </ion-content>
