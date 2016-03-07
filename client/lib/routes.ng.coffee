@@ -30,8 +30,14 @@ config = ($stateProvider, $urlRouterProvider) ->
       templateUrl: 'client/components/users/view-user.html'
       controller: 'ViewUserCtrl as viewUser'
     )
+    .state('list-follows',
+      url: '/following'
+      templateUrl: 'client/components/follows/list-follows.html'
+      controller: 'ListFollowsCtrl as listFollows'
+    )
 
   $urlRouterProvider.otherwise('/ideas')
+
 config.$inject = ['$stateProvider', '$urlRouterProvider']
 
 angular
