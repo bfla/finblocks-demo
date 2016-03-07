@@ -1,7 +1,8 @@
 redirectFromLogin = ($state) ->
   return $state.go('list-ideas')
 
-LoginCtrl = ($scope, $state, $reactive) ->
+LoginCtrl = ($scope, $state, $reactive, $ionicSideMenuDelegate) ->
+  $ionicSideMenuDelegate.toggleLeft(true)
   redirectFromLogin($state) if Meteor.userId()
   $reactive(@).attach($scope)
 
@@ -10,7 +11,7 @@ LoginCtrl = ($scope, $state, $reactive) ->
   @loginWithLinkedIn = ->
     Meteor.loginWithLinkedIn -> $state.go('list-ideas')
 
-LoginCtrl.$inject = ['$scope', '$state', '$reactive']
+LoginCtrl.$inject = ['$scope', '$state', '$reactive', '$ionicSideMenuDelegate']
 
 angular
   .module('finblocks')

@@ -1,23 +1,23 @@
 <ion-view view-title="Finblocks">
   <ion-content>
-    <ion-list>
-      <ion-item
-              ng-repeat="user in listUsers.users | orderBy:'+createdAt'"
-              class="item-user item-avatar item-icon-right item-button-right"
-              type="item-text-wrap" >
+    <div class="list card"
+          ng-repeat="user in listUsers.users | orderBy:'+createdAt'"
+          type="item-text-wrap">
+      <div class='item item-avatar'>
         <img ng-src="{{user._id | userAvatar}}"/>
         <h2>{{user._id | userHeader}}</h2>
+      </div>
+      <div class='item'>
         <a
-          class='button button-outline button-positive'
+          class='button button-small button-outline button-positive'
           href="#/users/{{user._id}}"> View </a>
-        <!-- <button 
-          class='button button-outline button-positive' 
-          ng-click="listUsers.follow(user._id)"> Follow </button> -->
-
-        <!-- <ion-option-button class='button-assertive' ng-click='listUsers.remove(idea)'> -->
-          <!-- Delete -->
-        <!-- </ion-option-button> -->
-      </ion-item>
-    </ion-list>
+        <button 
+          class='button button-small button-outline button-positive' 
+          ng-click="listUsers.follow(user._id)"> Follow </button>
+      </div>
+      <!-- <ion-option-button class='button-assertive' ng-click='listUsers.remove(idea)'> -->
+        <!-- Delete -->
+      <!-- </ion-option-button> -->
+    </div>
   </ion-content>
 </ion-view>

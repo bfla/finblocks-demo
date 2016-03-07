@@ -1,0 +1,19 @@
+<ion-view view-title="Finblocks">
+  <ion-content>
+    <ion-list>
+      <ion-item
+              ng-repeat="user in listFollows.users | orderBy:'+createdAt'"
+              class="item-user item-avatar"
+              type="item-text-wrap" >
+        <img ng-src="{{user._id | userAvatar}}"/>
+        <h2>{{user._id | userHeader}}</h2>
+        <a
+          class='button button-small button-outline button-positive'
+          href="#/users/{{user._id}}"> View </a>
+        <button
+          class='button button-small button-outline button-assertive'
+          ng-click="listFollows.unfollow(user._id)"> Unfollow </button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
