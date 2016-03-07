@@ -1,4 +1,9 @@
 Meteor.startup ->
+  Ideas._ensureIndex({userId: 1})
+  Ideas._ensureIndex({symbol: 1})
+  Follows._ensureIndex({followerId: 1, followingId: 1}, {unique: 1})
+
+Meteor.startup ->
   return if Meteor.users.findOne()
 
   Accounts.createUser
