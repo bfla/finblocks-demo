@@ -7,15 +7,16 @@ _schema = new SimpleSchema
     type: String
   symbol:
     type: String
-  startDate:
-    type: Date
+  basis:
+    type: String
+    allowedValues: ['technical', 'fundamental']
+  exitPrice:
+    type: Number
+  stopLossPrice:
+    type: Number
     optional: true
-  endDate:
+  horizonDate:
     type: Date
-    optional: true
-  expiry:
-    type: Date
-    optional: true
   createdAt:
     type: Date
     defaultValue: new Date()
