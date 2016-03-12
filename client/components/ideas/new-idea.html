@@ -1,25 +1,61 @@
 <ion-view view-title='Create idea'>
   <ion-content>
     <form class="list">
-      <label class="item item-input item-stacked-label">
+      <label class="item item-input">
         <span class="input-label">Stock symbol</span>
         <input 
           type="text" 
           placeholder="WADDUP"
           ng-model="newIdea.idea.symbol">
       </label>
-      <label class='item item-input item-stacked-label'>
-        <span class='input-label'> Start date </span>
-        <input type='date' ng-model="newIdea.idea.startDate">
+<!--       <label class="item item-input">
+        <span class="input-label">Entry price</span>
+        <input 
+          type="number" 
+          placeholder="100.00"
+          ng-model="newIdea.idea.symbol">
+      </label> -->
+      <label class="item item-input">
+        <span class="input-label">Exit price</span>
+        <input 
+          type="number" 
+          placeholder="100.00"
+          ng-model="newIdea.idea.exitPrice">
       </label>
-      <label class='item item-input item-stacked-label'>
+      <label class='item item-input'>
+        <span class='input-label'>Stop loss price</span>
+        <input 
+          type="number" 
+          placeholder="100.00"
+          ng-model="newIdea.idea.stopLossPrice">
+      </label>
+
+<!--       <label class='item item-input item-stacked-label'>
         <span class='input-label'> End date </span>
         <input type='date' ng-model="newIdea.idea.endDate">
+      </label> -->
+      <label class='item item-input item-select'>
+        <span class='input-label'>Horizon date</span>
+        <select ng-model="newIdea.idea.horizonDate">
+          <option>1 day </option>
+          <option>1 week</option>
+          <option selected='true'>1 month</option>
+          <option>3 months</option>
+          <option>6 months</option>
+          <option>1 year</option>
+        </select>
       </label>
-      <label class='item item-input item-stacked-label'>
+      <label class='item item-input item-select'>
+        <span class='input-label'>Idea type</span>
+        <select ng-model="newIdea.idea.basis">
+          <option value='technical'>technical</option>
+          <option value='fundamental'>fundamental</option>
+        </select>
+      </label>
+<!--       <label class='item item-input item-stacked-label'>
         <span class='input-label'> Expiry </span>
         <input type='date' ng-model="newIdea.idea.expiry">
-      </label>
+      </label> -->
       <label class="item item-input item-stacked-label">
         <span class='input-label'> Description </span>
         <textarea 
