@@ -19,6 +19,8 @@ NewIdeaCtrl = ($scope, $reactive, $meteor, $state, $ionicPopup) ->
 
   @idea =
     userId: Meteor.userId()
+    basis: 'technical'
+    horizonDate: '1 month'
 
   @save = save.bind(@, @idea, $state)
 
