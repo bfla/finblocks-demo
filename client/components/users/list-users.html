@@ -17,12 +17,12 @@
           type="item-text-wrap">
         <img ng-src="{{user._id | userAvatar}}"/>
         <h2>{{user._id | userHeader}}</h2>
-        <a
-          class='button button-small button-outline button-positive'
-          href="#/users/{{user._id}}"> View </a>
         <button 
-          class='button button-small button-outline button-positive' 
+          class='button button-small button-clear button-positive icon-left ion-pin' 
           ng-click="listUsers.follow(user._id)"> Follow </button>
+        <a
+          class='button button-small button-clear button-positive icon-left ion-ios-person'
+          href="#/users/{{user._id}}"> View Analyst </a>
     </ion-item>
   </ion-list>
   </ion-content>

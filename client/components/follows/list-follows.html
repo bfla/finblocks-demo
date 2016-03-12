@@ -8,10 +8,10 @@
         <img ng-src="{{user._id | userAvatar}}"/>
         <h2>{{user._id | userHeader}}</h2>
         <a
-          class='button button-small button-outline button-positive'
-          href="#/users/{{user._id}}"> View </a>
+          class='button button-small button-clear button-positive icon-left ion-ios-person'
+          href="#/users/{{user._id}}"> View Analyst </a>
         <button
-          class='button button-small button-outline button-assertive'
+          class='button button-small button-clear button-assertive icon-left ion-pin'
           ng-click="listFollows.unfollow(user._id)"> Unfollow </button>
       </ion-item>
     </ion-list>
