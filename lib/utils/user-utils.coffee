@@ -6,5 +6,15 @@ followsForUser = (userId) ->
     .fetch()
     .map (follow) -> follow.followingId
 
-@UserUtils =
+favoritesForUser = (userId) ->
+  favoriteIds = Favorites
+    .find({userId: userId})
+    .fetch()
+    .map (favorite) -> favorite.ideaId
+
+api =
   followsForUser: followsForUser
+  favoritesForUser: favoritesForUser
+
+@UserUtils = api
+

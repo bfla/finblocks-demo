@@ -35,6 +35,11 @@ config = ($stateProvider, $urlRouterProvider) ->
       templateUrl: 'client/components/follows/list-follows.html'
       controller: 'ListFollowsCtrl as listFollows'
     )
+    .state('list-favorites',
+      url: '/favorites'
+      templateUrl: 'client/components/favorites/list-favorites.html'
+      controller: 'ListFavoritesCtrl as listFavorites'
+    )
 
   $urlRouterProvider.otherwise('/ideas')
 

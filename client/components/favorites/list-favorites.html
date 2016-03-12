@@ -1,0 +1,23 @@
+<ion-view view-title="Finblocks">
+  <ion-content>
+    <ion-list>
+      <ion-item
+              ng-repeat="idea in listFavorites.ideas | orderBy:'-createdAt'"
+              class="item-idea item-remove-animate item-avatar item-icon-right"
+              type="item-text-wrap"
+              href="#/ideas/{{idea._id}}">
+        <img ng-src="{{idea.userId | userAvatar}}"/>
+        <h2>{{idea.userId | userHeader}}</h2>
+        <!-- <h2>{{idea | ideaName}}</h2> -->
+        <p>{{idea.description}}</p>
+        <span class="positive">{{idea.symbol}}</span>
+        <span class='balanced'> {{idea.symbol | stockQuote}} </span>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <!-- <ion-option-button class='button-assertive' ng-click='listFavorites.remove(idea)'> -->
+          <!-- Delete -->
+        <!-- </ion-option-button> -->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
