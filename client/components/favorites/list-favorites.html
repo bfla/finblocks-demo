@@ -6,21 +6,23 @@
               class="item-idea item-remove-animate item-avatar item-icon-right"
               type="item-text-wrap">
         <img ng-src="{{idea.userId | userAvatar}}"/>
-        <h2>{{idea.userId | userHeader}}</h2>
-        <!-- <h2>{{idea | ideaName}}</h2> -->
+        <h2>
+          <a class="positive" href="#/ideas/{{idea._id}}">{{idea.symbol}}</span>
+          <span class='balanced'> {{idea.symbol | stockQuote}} </span>
+        </h2>
         <p>{{idea.description}}</p>
-        <span class="positive">{{idea.symbol}}</span>
-        <span class='balanced'> {{idea.symbol | stockQuote}} </span>
-        <!-- <i class="icon ion-chevron-right icon-accessory"></i> -->
+        <p><small>{{idea.userId | userHeader}}</small></p>
         <button 
-          class='button button-small button-outline button-positive icon-left ion-ios-star' 
+          class='button button-small button-clear button-positive icon-left ion-ios-star' 
           ng-click="listFavorites.unfavorite(idea._id)">
-            <!-- <i class='icon ion-ios-star'></i> -->
-            Unfavorite
         </button>
         <a
-          class='button button-small button-outline button-positive' 
-          href="#/ideas/{{idea._id}}">View</a>
+          href="#/ideas/{{idea._id}}">
+          <button
+            class='button button-small button-clear button-positive ion-arrow-graph-up-right'>
+            Details
+          </button>
+        </a>
         <!-- <ion-option-button class='button-assertive' ng-click='listFavorites.remove(idea)'> -->
           <!-- Delete -->
         <!-- </ion-option-button> -->
