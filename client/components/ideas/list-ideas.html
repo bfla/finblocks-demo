@@ -6,28 +6,33 @@
               class="item-idea item-remove-animate item-avatar item-icon-right"
               type="item-text-wrap">
         <img ng-src="{{idea.userId | userAvatar}}"/>
-        <h2>{{idea.userId | userHeader}}</h2>
-        <!-- <h2>{{idea | ideaName}}</h2> -->
+        
+        <h2>
+          <a href="#/ideas/{{idea._id}}" class="positive">{{idea.symbol}}</a>
+          <span class='balanced'> {{idea.symbol | stockQuote}} </span>
+        </h2>
         <p>{{idea.description}}</p>
-        <span class="positive">{{idea.symbol}}</span>
-        <span class='balanced'> {{idea.symbol | stockQuote}} </span>
+        <p><small class='text-muted'>{{idea.userId | userHeader}}</small></p>
+        <!-- <h2>{{idea | ideaName}}</h2> -->
         <button 
-          class='button button-small button-outline button-positive icon-left ion-ios-star' 
+          class='button button-small button-clear button-positive icon-left ion-ios-star'
           ng-show="listIdeas.isFavorite(idea._id)"
           ng-click="listIdeas.unfavorite(idea._id)">
             <!-- <i class='icon ion-ios-star'></i> -->
-            Unfavorite
         </button>
         <button
-          class='button button-small button-outline button-positive icon-left ion-ios-star-outline' 
+          class='button button-small button-clear button-positive icon-left ion-ios-star-outline' 
           ng-hide="listIdeas.isFavorite(idea._id)"
           ng-click="listIdeas.favorite(idea._id)">
             <!-- <i class='icon ion-ios-star-outline'></i> -->
-            Favorite
         </button>
-        <a
-          class='button button-small button-outline button-positive' 
-          href="#/ideas/{{idea._id}}">View</a>
+        <a 
+          href="#/ideas/{{idea._id}}">
+          <button
+            class='button button-small button-clear button-positive ion-arrow-graph-up-right'>
+            Details
+          </button>
+        </a>
         <!-- <i class="icon ion-chevron-right icon-accessory"></i> -->
 
         <!-- <ion-option-button class='button-assertive' ng-click='listIdeas.remove(idea)'> -->
