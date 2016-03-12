@@ -2,7 +2,7 @@
   <ion-content>
     <ion-list>
       <ion-item
-              ng-repeat="idea in listIdeas.ideas | orderBy:'-createdAt'"
+              ng-repeat="idea in listFavorites.ideas | orderBy:'-createdAt'"
               class="item-idea item-remove-animate item-avatar item-icon-right"
               type="item-text-wrap">
         <img ng-src="{{idea.userId | userAvatar}}"/>
@@ -11,26 +11,17 @@
         <p>{{idea.description}}</p>
         <span class="positive">{{idea.symbol}}</span>
         <span class='balanced'> {{idea.symbol | stockQuote}} </span>
+        <!-- <i class="icon ion-chevron-right icon-accessory"></i> -->
         <button 
           class='button button-small button-outline button-positive icon-left ion-ios-star' 
-          ng-show="listIdeas.isFavorite(idea._id)"
-          ng-click="listIdeas.unfavorite(idea._id)">
+          ng-click="listFavorites.unfavorite(idea._id)">
             <!-- <i class='icon ion-ios-star'></i> -->
             Unfavorite
-        </button>
-        <button
-          class='button button-small button-outline button-positive icon-left ion-ios-star-outline' 
-          ng-hide="listIdeas.isFavorite(idea._id)"
-          ng-click="listIdeas.favorite(idea._id)">
-            <!-- <i class='icon ion-ios-star-outline'></i> -->
-            Favorite
         </button>
         <a
           class='button button-small button-outline button-positive' 
           href="#/ideas/{{idea._id}}">View</a>
-        <!-- <i class="icon ion-chevron-right icon-accessory"></i> -->
-
-        <!-- <ion-option-button class='button-assertive' ng-click='listIdeas.remove(idea)'> -->
+        <!-- <ion-option-button class='button-assertive' ng-click='listFavorites.remove(idea)'> -->
           <!-- Delete -->
         <!-- </ion-option-button> -->
       </ion-item>
