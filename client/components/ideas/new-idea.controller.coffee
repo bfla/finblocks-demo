@@ -9,6 +9,7 @@ save = (idea, $state) ->
     when '3 months' then moment().add(3, 'months').toDate()
     when '6 months' then moment().add(6, 'months').toDate()
     when '1 year' then moment().add(1, 'years').toDate()
+    else moment().add(30, 'days').toDate()
   submission.horizonDate = horizonDate
   Ideas.insert submission, (err) ->
     return console.log(err) if err?
