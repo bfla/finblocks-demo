@@ -28,7 +28,9 @@ ListIdeasCtrl = ($scope, $state, $reactive, $meteor) ->
 
   @helpers(
     ideas: ->
-      query = {userId: {$in: UserUtils.followsForUser(Meteor.userId())}}
+      query =
+        userId: {$in: UserUtils.followsForUser(Meteor.userId())} # Only for analysts I follow
+        horizonDate: {$gte: new Date()} # Only un-expired ideas
       Ideas.find(query).fetch()
   )
 
