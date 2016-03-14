@@ -1,24 +1,49 @@
-<ion-view>
+<ion-view class='view-idea'>
   <ion-content>
-    <div class='padding'>
-      <h1 class='text-center positive'>{{viewIdea.idea.symbol}}</h1>
-      <h2 class='text-center positive'>{{viewIdea.idea.symbol | stockQuote }}</h2>
-      <p class='text-center positive'>
-        Start: {{viewIdea.idea.startDate | ideaTime}}
-        &nbsp;...&nbsp;
-        End: {{viewIdea.idea.endDate | ideaTime}}
-      </p>
+    <div class='padding col col-50 col-offset-25'>
       <div class="list card">
         <div class="item item-avatar">
           <img ng-src="{{viewIdea.idea.userId | userAvatar}}"/>
-          <h2>{{viewIdea.idea.userId | userHeader}}</h2>
+          <p>
+            {{viewIdea.idea.description}}
+            <br />
+            <small><small>{{viewIdea.idea.userId | userHeader}}</small></small>
+          </p>
         </div>
-
-        <div class='item'>
-          <p>{{viewIdea.idea.description}}</p>
-        </div>
-
       </div>
+      <div class='list'>
+        <div class='item'>
+          <span class='text-muted'>Ticker</span>
+          <span class='item-note'> {{viewIdea.idea.symbol}}</span>
+        </div>
+        <div class='item'>
+          <span class='text-muted'>Last price</span>
+          <span class="item-note"> {{viewIdea.idea.symbol | stockQuote}} </span>
+        </div>
+        <div class='item'>
+          <span class='text-muted'>Exit price</span>
+          <span class="item-note"> {{viewIdea.idea.exitPrice}} </span>
+        </div>
+        <div class='item'>
+          <span class='text-muted'>Last price</span>
+          <span class="item-note"> {{viewIdea.idea.stopLossPrice}} </span>
+        </div>
+        <div class='item'>
+          <span class='text-muted'>Current profit</span>
+          <span class="item-note"> {{viewIdea.idea.symbol | stockQuote}} </span>
+        </div>
+        <div class='item'>
+          <span class='text-muted'>Horizon</span>
+          <span class="item-note"> {{viewIdea.idea.horizonDate | ideaTime}} </span>
+        </div>
+        <div class='item'>
+          <span class='text-muted'>Analysis</span>
+          <span class="item-note"> {{viewIdea.idea.basis}} </span>
+        </div>
+      </div>
+      <p>
+        
+      </p>
 
       <!-- <div class='list list-inset'>
         <div class='item'>Start: {{viewIdea.idea.startDate | ideaTime}}</div>
