@@ -5,8 +5,10 @@ _schema = new SimpleSchema
     type: String
   description:
     type: String
+    max: 144
   symbol:
     type: String
+    max: 30
   basis:
     type: String
     allowedValues: ['technical', 'fundamental']

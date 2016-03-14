@@ -78,34 +78,51 @@ Meteor.startup ->
       employer: 'Berkshire Hathaway'
 
   return if Ideas.findOne()
-  userId = Meteor.users.findOne()._id
-  return unless userId?
+  _mrMarket = Meteor.users.findOne('profile.firstName': 'Mr')._id
+  _warren = Meteor.users.findOne('profile.firstName': 'Warren')._id
+  _gandalf = Meteor.users.findOne('profile.firstName': 'Gandalf')._id
+  return unless _mrMarket? and _warren? and _gandalf?
 
   Ideas.insert(
-    userId: userId
-    symbol: 'MADOFF'
-    description: 'This guy always makes money. It is like magic'
-    expiry: moment().add(10, 'days').toDate()
-    startDate: moment().add(1, 'days').toDate()
-    endDate: moment().add(15, 'days').toDate()
+    userId: _gandalf
+    symbol: 'MORIA'
+    description: 'High risk but they are sitting on a big pile of natural
+                  resources. I am confident that Balrog will no loner be a
+                  problem.'
+    basis: 'fundamental'
+    exitPrice: 10.00
+    stopLossPrice: 12.00
+    horizonDate: moment().add(30, 'days').toDate()
   )
 
   Ideas.insert(
-    userId: userId
+    userId: _mrMarket
     symbol: 'ENRON'
     description: 'This one is a sure thing.'
-    expiry: moment().add(30, 'days').toDate()
-    startDate: moment().toDate()
-    endDate: moment().add(30, 'days').toDate()
+    basis: 'technical'
+    exitPrice: 100.00
+    stopLossPrice: 120.00
+    horizonDate: moment().add(30, 'days').toDate()
   )
 
   Ideas.insert(
-    userId: userId
+    userId: _mrMarket
     symbol: 'WCOM'
-    description: 'I am very confident about this one. Buy buy buy!'
-    expiry: moment().add(10, 'days').toDate()
-    startDate: moment().subtract(6, 'days').toDate()
-    endDate: moment().add(10, 'days').toDate()
+    description: 'This one is also a sure thing.'
+    basis: 'technical'
+    exitPrice: 10.00
+    stopLossPrice: 12.00
+    horizonDate: moment().add(30, 'days').toDate()
+  )
+
+  Ideas.insert(
+    userId: _warren
+    symbol: 'GEICO'
+    description: 'This company is fundamentally sound and undervalued!'
+    basis: 'fundamental'
+    exitPrice: 50.00
+    stopLossPrice: 60.00
+    horizonDate: moment().add(30, 'days').toDate()
   )
 
 
