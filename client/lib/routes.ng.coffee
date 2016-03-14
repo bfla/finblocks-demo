@@ -5,43 +5,66 @@ config = ($stateProvider, $urlRouterProvider) ->
       templateUrl: 'client/components/users/login.html'
       controller: 'LoginCtrl as login'
     )
-    .state('list-ideas',
-      url: '/ideas'
-      templateUrl: 'client/components/ideas/list-ideas.html'
-      controller: 'ListIdeasCtrl as listIdeas'
+    # Tab controller =============================================
+    .state('menu',
+      url: '/menu'
+      templateUrl: 'client/components/shared/main-layout.html'
+      controller: 'MainLayoutCtrl as layout'
+      abstract: true
     )
-    .state('new-idea',
+    # Tabs =======================================================
+    .state('menu.list-ideas',
+      url: '/ideas'
+      views:
+        menuContent:
+          templateUrl: 'client/components/ideas/list-ideas.html'
+          controller: 'ListIdeasCtrl as listIdeas'
+    )
+    .state('menu.new-idea',
       url: '/ideas/new'
-      templateUrl: 'client/components/ideas/new-idea.html'
-      controller: 'NewIdeaCtrl as newIdea'
+      views:
+        menuContent:
+          templateUrl: 'client/components/ideas/new-idea.html'
+          controller: 'NewIdeaCtrl as newIdea'
+    )
+    .state('menu.list-users',
+      url: '/analysts'
+      views:
+        menuContent:
+          templateUrl: 'client/components/users/list-users.html'
+          controller: 'ListUsersCtrl as listUsers'
+    )
+    .state('menu.list-follows',
+      url: '/following'
+      views:
+        menuContent:
+          templateUrl: 'client/components/follows/list-follows.html'
+          controller: 'ListFollowsCtrl as listFollows'
+    )
+    .state('menu.list-favorites',
+      url: '/favorites'
+      views:
+        menuContent:
+          templateUrl: 'client/components/favorites/list-favorites.html'
+          controller: 'ListFavoritesCtrl as listFavorites'
+    )
+    # Views without tabs =======================================================
+    .state('view-user',
+      url: '/users/:userId'
+      views:
+        menuContent:
+          templateUrl: 'client/components/users/view-user.html'
+          controller: 'ViewUserCtrl as viewUser'
     )
     .state('view-idea',
       url: '/ideas/:ideaId'
-      templateUrl: 'client/components/ideas/view-idea.html'
-      controller: 'ViewIdeaCtrl as viewIdea'
-    )
-    .state('list-users',
-      url: '/analysts'
-      templateUrl: 'client/components/users/list-users.html'
-      controller: 'ListUsersCtrl as listUsers'
-    )
-    .state('view-user',
-      url: '/users/:userId'
-      templateUrl: 'client/components/users/view-user.html'
-      controller: 'ViewUserCtrl as viewUser'
-    )
-    .state('list-follows',
-      url: '/following'
-      templateUrl: 'client/components/follows/list-follows.html'
-      controller: 'ListFollowsCtrl as listFollows'
-    )
-    .state('list-favorites',
-      url: '/favorites'
-      templateUrl: 'client/components/favorites/list-favorites.html'
-      controller: 'ListFavoritesCtrl as listFavorites'
+      views:
+        menuContent:
+          templateUrl: 'client/components/ideas/view-idea.html'
+          controller: 'ViewIdeaCtrl as viewIdea'
     )
 
-  $urlRouterProvider.otherwise('/ideas')
+  $urlRouterProvider.otherwise('menu/ideas')
 
 config.$inject = ['$stateProvider', '$urlRouterProvider']
 

@@ -1,29 +1,48 @@
-<!-- Create a layout that uses a sidemenu -->
-<ion-side-menus>
+<!--
+  The nav bar that will be updated as we navigate between views.
+-->
 
-  <ion-pane ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
-  </ion-pane>
+<!--
+  The views will be rendered in the <ion-nav-view> directive below
+  Templates are in the /templates folder (but you could also
+  have templates inline in this html file if you'd like).
+-->
+<ion-side-menus enable-menu-with-back-views="false">
+  <!-- Center content -->
+  <ion-side-menu-content>
+    <ion-nav-view name="menuContent">
+      <ion-nav-buttons side="left">
+      </ion-nav-buttons>
+    </ion-nav-view>
+  </ion-side-menu-content>
 
-  <ion-side-menu side="left">
-    <header class="bar bar-header bar-stable">
-      <h1 class="title">Left</h1>
-    </header>
-    <ion-content class="has-header">
-      <ion-list>
-        <ion-item nav-clear menu-close href="#/app/search">
-          Search
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
-        </ion-item>
-      </ion-list>
-    </ion-content>
+  <!-- Left menu -->
+  <ion-side-menu expose-aside-when="large" side='left'>
+    <div class='list' style='padding-top:43px;'>
+      <a class='item item-icon-left positive' ui-sref='menu.list-ideas'> 
+        <i class='icon ion-arrow-graph-up-right'></i>
+        Ideas
+      </a>
+      <a class='item item-icon-left positive' ui-sref='menu.list-users'>
+        <i class='icon ion-ios-search'></i>
+        Follow Analysts
+      </a>
+      <a class='item item-icon-left positive' ui-sref='menu.list-favorites'>
+        <i class='icon ion-ios-star'></i>
+        Watch List
+      </a>
+      <a class='item item-icon-left positive' ui-sref='menu.list-follows'>
+        <i class='icon ion-ios-people-outline'></i>
+        Analysts I Follow
+      </a>
+      <a class='item item-icon-left balanced' ui-sref='menu.new-idea'>
+        <i class='icon ion-ios-plus-outline'></i>
+        Create Idea
+      </a>
+<!--       <a class='item item-icon-left positive'>
+        <i class='icon ion-chatbubble'></i>
+        Chat
+      </a> -->
+    </div>
   </ion-side-menu>
 </ion-side-menus>
