@@ -8,11 +8,14 @@
   have templates inline in this html file if you'd like).
 -->
 <ion-side-menus enable-menu-with-back-views="false">
+  <ion-header-bar class="bar-positive" align-title="center">
+    <div class="buttons">
+      <button menu-toggle="layout.toggleMenu()" class="button button-icon button-clear ion-navicon"></button>
+    </div>
+  </ion-header-bar>
   <!-- Center content -->
   <ion-side-menu-content>
     <ion-nav-view name="menuContent">
-      <ion-nav-buttons side="left">
-      </ion-nav-buttons>
     </ion-nav-view>
   </ion-side-menu-content>
 
