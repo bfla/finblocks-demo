@@ -14,9 +14,11 @@ _schema = new SimpleSchema
     allowedValues: ['technical', 'fundamental']
   exitPrice:
     type: Number
+    min: 0
   stopLossPrice:
     type: Number
     optional: true
+    min: 0
   horizonDate:
     type: Date
   createdAt:
