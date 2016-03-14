@@ -1,5 +1,12 @@
 <ion-view view-title="Finblocks">
   <ion-content>
+    <div ng-hide="(listIdeas.ideas && listIdeas.ideas.length)" class='text-center padding'>
+      <h1 class='header-subtle'>No ideas yet!</h1>
+      <p>
+        <a href="#/analysts">Follow some analysts</a> 
+        to start seeing investment ideas in your feed.
+      </p>
+    </div>
     <ion-list>
       <ion-item
               ng-repeat="idea in listIdeas.ideas | orderBy:'-createdAt'"

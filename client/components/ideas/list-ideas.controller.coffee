@@ -27,7 +27,9 @@ ListIdeasCtrl = ($scope, $state, $reactive, $meteor) ->
   @unfavorite = unfavorite
 
   @helpers(
-    ideas: -> return Ideas.find().fetch()
+    ideas: ->
+      query = {userId: {$in: UserUtils.followsForUser(Meteor.userId())}}
+      Ideas.find(query).fetch()
   )
 
 ListIdeasCtrl.$inject = ['$scope', '$state', '$reactive', '$meteor']
