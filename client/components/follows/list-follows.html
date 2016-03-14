@@ -1,6 +1,13 @@
 <ion-view view-title="Finblocks">
   <ion-content>
     <ion-list>
+      <div ng-hide="(listFollows.users && listFollows.users.length)" class='text-center padding'>
+        <h1 class='header-subtle'>You're not following anyone yet.</h1>
+        <p>
+          <a href="#/analysts">Follow some analysts</a> 
+          to start seeing ideas in your feed.
+        </p>
+      </div>
       <ion-item
               ng-repeat="user in listFollows.users | orderBy:'+createdAt'"
               class="item-user item-avatar"
