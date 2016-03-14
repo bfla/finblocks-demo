@@ -1,5 +1,12 @@
 <ion-view view-title="Finblocks">
   <ion-content>
+    <div ng-hide="(listFavorites.ideas && listFavorites.ideas.length)" class='text-center padding'>
+      <h1 class='header-subtle'>Your watch list is empty.</h1>
+      <p>
+        <a href="#/ideas">Star ideas in your feed</a> 
+        to add them to your watch list.
+      </p>
+    </div>
     <ion-list>
       <ion-item
               ng-repeat="idea in listFavorites.ideas | orderBy:'-createdAt'"
