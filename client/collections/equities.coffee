@@ -1,1 +1,1 @@
-@Equities = new Mongo.Collection('equities')
+@Equities = new Mongo.Collection(null)
