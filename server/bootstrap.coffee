@@ -85,7 +85,7 @@ Meteor.startup ->
 
   Ideas.insert(
     userId: _gandalf
-    symbol: 'MORIA'
+    symbol: 'AAPL'
     description: 'High risk but they are sitting on a big pile of natural
                   resources. I am confident that Balrog will no loner be a
                   problem.'
@@ -97,7 +97,7 @@ Meteor.startup ->
 
   Ideas.insert(
     userId: _mrMarket
-    symbol: 'ENRON'
+    symbol: 'AMZN'
     description: 'This one is a sure thing.'
     basis: 'technical'
     exitPrice: 100.00
@@ -107,7 +107,7 @@ Meteor.startup ->
 
   Ideas.insert(
     userId: _mrMarket
-    symbol: 'WCOM'
+    symbol: 'TSLA'
     description: 'This one is also a sure thing.'
     basis: 'technical'
     exitPrice: 10.00
@@ -117,7 +117,7 @@ Meteor.startup ->
 
   Ideas.insert(
     userId: _warren
-    symbol: 'GEICO'
+    symbol: 'AXP'
     description: 'This company is fundamentally sound and undervalued!'
     basis: 'fundamental'
     exitPrice: 50.00

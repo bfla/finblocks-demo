@@ -2,19 +2,16 @@ favoriteCb = (err) ->
   return console.log(err) if err?
 
 isFavorite = (ideaId) ->
-  console.log 'isFavorite()', ideaId
   return true if Favorites.findOne(userId: Meteor.userId(), ideaId: ideaId)?
   return false
 
 favorite = (ideaId) ->
-  console.log 'favorite()', ideaId
   submission =
     userId: Meteor.userId()
     ideaId: ideaId
   Favorites.insert(submission, favoriteCb)
 
 unfavorite = (ideaId) ->
-  console.log 'unfavorite()', ideaId
   favorite = Favorites.findOne(userId: Meteor.userId(), ideaId: ideaId)
   return console.log('unfavorite() requires a _favorite') unless favorite?._id
   Favorites.remove(favorite._id)
