@@ -1,4 +1,4 @@
-convertHorizonDate = (horizonDateText) ->
+_convertHorizonDate = (horizonDateText) ->
   switch horizonDateText
     when '1 day' then moment().add(1, 'days').toDate()
     when '1 week' then moment().add(7, 'days').toDate()
@@ -8,8 +8,9 @@ convertHorizonDate = (horizonDateText) ->
     when '1 year' then moment().add(1, 'years').toDate()
     else moment().add(30, 'days').toDate()
 
-NewIdeaCtrl = ($scope, $reactive, $meteor, $state, $ionicPopup) ->
+NewIdeaCtrl = ($scope, $reactive, $meteor, $state, $ionicPopup, $filter) ->
   $reactive(@).attach($scope)
+  @lastPrice = 'NA'
   ideaDefaults =
     userId: Meteor.userId()
     basis: 'technical'
@@ -20,15 +21,17 @@ NewIdeaCtrl = ($scope, $reactive, $meteor, $state, $ionicPopup) ->
   @save = ->
     console.log "@save()", @idea
     submission = _.extend(@idea, {})
-    submission.horizonDate = convertHorizonDate(@idea.horizonDate)
+    submission.horizonDate = _convertHorizonDate(@idea.horizonDate)
     Ideas.insert submission, (err) ->
       return console.log(err) if err?
       @idea = _.extend(ideaDefaults, {})
       $state.go('list-ideas')
 
+  @updateStockQuote = => @lastPrice = $filter('stockQuote')(@idea.symbol)
+
   @helpers()
 
-NewIdeaCtrl.$inject = ['$scope', '$reactive', '$meteor', '$state', '$ionicPopup']
+NewIdeaCtrl.$inject = ['$scope', '$reactive', '$meteor', '$state', '$ionicPopup', '$filter']
 
 angular
   .module('finblocks')
