@@ -1,7 +1,17 @@
+findOrCreateEquity = (symbol) ->
+  existing = Equities.findOne(symbol: symbol)
+  return existing if existing?
+
+  Meteor.call 'getStock', symbol, (err, res) ->
+    throw new Meteor.Error('client-stock-api-res') if err?
+    equity = _.extend({}, res)
+    console.log('equity', equity)
+    Equities.insert(equity) if equity?
+    return Equities.findOne(symbol: symbol)
+
 stockQuote = ->
   (symbol) ->
-    #TODO - get real stock quotes
-    return (Math.random() * 100).toFixed(2)
+    findOrCreateEquity(symbol).bid
 
 angular
   .module('finblocks')
