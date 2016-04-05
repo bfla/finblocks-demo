@@ -1,3 +1,5 @@
+<img src="https://codeship.com/projects/b39d3de0-dd88-0133-df17-0a409e517203/status?branch=master" />
+
 ## Run the app locally
 
 ```
