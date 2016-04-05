@@ -1,0 +1,13 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "foo"
+    },
+  },
+  "public": {
+    "services": {}
+  },
+  "private": {
+    "services": {}
+  }
+}
