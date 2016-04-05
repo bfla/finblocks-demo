@@ -1,7 +1,6 @@
 Meteor.methods
   getStock: (symbol) ->
     check(symbol, String)
-    # check(cb, Function)
     @unblock()
     # url = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/json'
     url = 'https://www.enclout.com/api/v1/yahoo_finance/show.json'
