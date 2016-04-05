@@ -4,6 +4,7 @@ Meteor.startup ->
   Ideas._ensureIndex({symbol: 1})
   Follows._ensureIndex({followerId: 1, followingId: 1}, {unique: 1})
   Favorites._ensureIndex({userId: 1})
+  Favorites._ensureIndex({userId: 1, ideaId: 1}, {unique: 1})
 
 # Add some fake data if the database is empty
 Meteor.startup ->
