@@ -6,6 +6,9 @@ _schema = new SimpleSchema
   description:
     type: String
     max: 144
+  details:
+    type: String
+    optional: true
   symbol:
     type: String
     max: 30
