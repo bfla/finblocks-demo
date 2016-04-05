@@ -1,10 +1,4 @@
-Meteor.startup ->
-  Ideas._ensureIndex({userId: 1})
-  Ideas._ensureIndex({symbol: 1})
-  Follows._ensureIndex({followerId: 1, followingId: 1}, {unique: 1})
-  Favorites._ensureIndex({userId: 1})
-
-Meteor.startup ->
+@seedData = ->
   return if Meteor.users.findOne()
 
   Accounts.createUser
@@ -124,5 +118,3 @@ Meteor.startup ->
     stopLossPrice: 60.00
     horizonDate: moment().add(30, 'days').toDate()
   )
-
-
