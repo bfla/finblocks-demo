@@ -17,3 +17,6 @@ Meteor.publish 'favorites', ->
 Meteor.publish 'follows', ->
   throw Meteor.Error('follows-unauthorizewd-sub') unless @userId
   Follows.find(userId: userId)
+
+Meteor.publish 'users', ->
+  Meteor.users.find()

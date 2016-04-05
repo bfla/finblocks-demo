@@ -37,11 +37,7 @@ Ideas.allow
   update: (userId, doc, fieldNames, mod) -> userId is doc.userId
   remove: (userId, doc) -> userId is doc.userId
 
-# _whitelistUpdates = (doc) ->
-#   n = _.without(doc, 'description', 'symbol').length
-#   return true unless n < 1
-
 # Ideas.deny
-#   # insert: (userId, doc) -> return true
-#   update: (userId, doc) -> _whitelistUpdates(doc)
-  # remove: (userId, doc) -> return true
+#   insert: (userId, doc) -> return true
+#   update: (userId, doc) -> return true
+#   remove: (userId, doc) -> return true
