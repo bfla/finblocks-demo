@@ -12,11 +12,11 @@ Meteor.publish 'ideas', -> Ideas.find()
 
 Meteor.publish 'favorites', ->
   throw Meteor.Error('favorites-unauthorizewd-sub') unless @userId
-  Favorites.find(userId: userId)
+  Favorites.find(userId: @userId)
 
 Meteor.publish 'follows', ->
   throw Meteor.Error('follows-unauthorizewd-sub') unless @userId
-  Follows.find(userId: userId)
+  Follows.find(userId: @userId)
 
 Meteor.publish 'users', ->
   Meteor.users.find()
