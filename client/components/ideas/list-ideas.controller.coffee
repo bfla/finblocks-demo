@@ -19,6 +19,11 @@ unfavorite = (ideaId) ->
 ListIdeasCtrl = ($scope, $state, $reactive, $meteor) ->
   $reactive(@).attach($scope)
   return $state.go('login') unless Meteor.userId()
+
+  @subscribe('ideas')
+  @subscribe('favorites')
+  @subscribe('users')
+
   @isFavorite = isFavorite
   @favorite = favorite
   @unfavorite = unfavorite

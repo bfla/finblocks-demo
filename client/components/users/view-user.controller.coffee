@@ -1,6 +1,8 @@
 ViewUserCtrl = ($scope, $reactive, $meteor, $stateParams, $ionicPopup) ->
   $reactive(@).attach($scope)
   userId = $stateParams.userId
+  @subscribe('users')
+  @subscribe('ideas')
   @follow = -> dontWorkYet($ionicPopup)
 
   @helpers(

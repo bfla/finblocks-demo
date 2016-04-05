@@ -1,6 +1,10 @@
 ListFollowsCtrl = ($scope, $reactive, $meteor) ->
   $reactive(@).attach($scope)
 
+  @subscribe('ideas')
+  @subscribe('follows')
+  @subscribe('users')
+
   unfollowCb = (err) ->
     return console.log(err) if err
 

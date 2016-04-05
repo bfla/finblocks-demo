@@ -4,6 +4,9 @@ ViewIdeaCtrl = ($scope, $reactive, $meteor, $stateParams, $ionicPopup) ->
 
   @buy = -> dontWorkYet($ionicPopup)
 
+  @subscribe('ideas')
+  @subscribe('users')
+
   @helpers(
     idea: -> Ideas.findOne(ideaId)
   )

@@ -8,6 +8,10 @@ ListFavoritesCtrl = ($scope, $reactive, $meteor) ->
   $reactive(@).attach($scope)
   @unfavorite = unfavorite
 
+  @subscribe('ideas')
+  @subscribe('favorites')
+  @subscribe('users')
+
   @helpers(
     ideas: -> Ideas.find(_id: {$in: UserUtils.favoritesForUser(Meteor.userId())})
   )

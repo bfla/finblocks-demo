@@ -1,5 +1,7 @@
 ListUsersCtrl = ($scope, $reactive, $meteor, $ionicPopup) ->
   $reactive(@).attach($scope)
+  @subscribe('follows')
+  @subscribe('users')
 
   followCb = (err) ->
     return unless err?
