@@ -19,10 +19,7 @@
         </h2>
         <p>{{idea.description}}</p>
         <p><small><small>{{idea.userId | userHeader}}</small></small></p>
-        <button 
-          class='button button-small button-clear button-positive icon-left ion-ios-star' 
-          ng-click="listFavorites.unfavorite(idea._id)">
-        </button>
+        <favorite-btn _idea="{{idea._id}}"></favorite-btn>
         <a
           href="#/ideas/{{idea._id}}">
           <button

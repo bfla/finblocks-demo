@@ -21,18 +21,6 @@
         <p>{{idea.description}}</p>
         <p><small><small>{{idea.userId | userHeader}}</small></small></p>
         <!-- <h2>{{idea | ideaName}}</h2> -->
-        <button 
-          class='button button-small button-clear button-positive icon-left ion-ios-star'
-          ng-show="listIdeas.isFavorite(idea._id)"
-          ng-click="listIdeas.unfavorite(idea._id)">
-            <!-- <i class='icon ion-ios-star'></i> -->
-        </button>
-        <button
-          class='button button-small button-clear button-positive icon-left ion-ios-star-outline' 
-          ng-hide="listIdeas.isFavorite(idea._id)"
-          ng-click="listIdeas.favorite(idea._id)">
-            <!-- <i class='icon ion-ios-star-outline'></i> -->
-        </button>
         <a 
           href="#/ideas/{{idea._id}}">
           <button
@@ -40,6 +28,7 @@
             Details
           </button>
         </a>
+        <favorite-btn idea-id="{{idea._id}}"></favorite-btn>
 <!--         <a
           href="#/users/{{idea.userId}}">
           <button
