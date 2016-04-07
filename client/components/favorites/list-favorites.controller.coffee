@@ -12,6 +12,8 @@ ListFavoritesCtrl = ($scope, $reactive, $meteor) ->
   @subscribe('favorites')
   @subscribe('users')
 
+  updateStocks()
+
   @helpers(
     ideas: -> Ideas.find(_id: {$in: UserUtils.favoritesForUser(Meteor.userId())})
   )

@@ -24,6 +24,8 @@ ListIdeasCtrl = ($scope, $state, $reactive, $meteor) ->
   @subscribe('favorites')
   @subscribe('users')
 
+  updateStocks()
+
   @isFavorite = isFavorite
   @favorite = favorite
   @unfavorite = unfavorite
