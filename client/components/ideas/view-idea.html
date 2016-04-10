@@ -19,7 +19,7 @@
           </div>
           <div class='item'>
             <span class='text-muted'>Last price</span>
-            <span class="item-note"> {{viewIdea.idea.symbol | stockQuote}} </span>
+            <span class="item-note"> <stock-price ng-symbol="{{viewIdea.idea.symbol}}"></stock-price> </span>
           </div>
           <div class='item'>
             <span class='text-muted'>Exit price</span>
