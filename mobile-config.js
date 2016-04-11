@@ -2,6 +2,7 @@
 /* eslint-disable quote-props */
 
 App.info({
+  id: 'com.restless.finblocks',
   name: 'Finblocks',
   description: 'Twitter for active traders.',
   author: 'Restless',
