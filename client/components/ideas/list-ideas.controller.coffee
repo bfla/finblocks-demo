@@ -24,6 +24,9 @@ ListIdeasCtrl = ($scope, $state, $reactive, $meteor) ->
   @subscribe('favorites')
   @subscribe('users')
   @subscribe('follows')
+  updateStocks()
+  follows = @autorun -> UserUtils.followsForUser(Meteor.userId()) || []
+
 
   @isFavorite = isFavorite
   @favorite = favorite
@@ -33,6 +36,7 @@ ListIdeasCtrl = ($scope, $state, $reactive, $meteor) ->
     ideas: ->
       _userIds = UserUtils.followsForUser(Meteor.userId())
       query =
+        userId: {$in: follows} # Only for analysts I follow
         userId: {$in: _userIds} # Only for analysts I follow
         horizonDate: {$gte: new Date()} # Only un-expired ideas
       Ideas.find(query).fetch()

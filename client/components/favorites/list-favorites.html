@@ -15,7 +15,7 @@
         <img ng-src="{{idea.userId | userAvatar}}"/>
         <h2>
           <a class="positive" href="#/ideas/{{idea._id}}">{{idea.symbol}}</a>
-          <span class='balanced'> {{idea.symbol | stockQuote}} </span>
+          <stock-price ng-symbol="{{idea.symbol}}"></stock-price>
         </h2>
         <p>{{idea.description}}</p>
         <p><small><small>{{idea.userId | userHeader}}</small></small></p>

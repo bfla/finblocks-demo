@@ -16,7 +16,7 @@
         
         <h2>
           <a href="#/ideas/{{idea._id}}" class="positive">{{idea.symbol}}</a>
-          <span class='balanced'> {{idea.symbol | stockQuote}} </span>
+          <!-- <stock-price ng-symbol="{{idea.symbol}}"></stock-price> -->
         </h2>
         <p>{{idea.description}}</p>
         <p><small><small>{{idea.userId | userHeader}}</small></small></p>
