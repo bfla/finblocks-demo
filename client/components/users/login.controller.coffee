@@ -2,7 +2,7 @@ redirectFromLogin = ($state) ->
   return $state.go('list-ideas')
 
 LoginCtrl = ($scope, $state, $reactive, $ionicSideMenuDelegate) ->
-  $ionicSideMenuDelegate.toggleLeft(true)
+  $ionicSideMenuDelegate.toggleLeft()
   redirectFromLogin($state) if Meteor.userId()
   $reactive(@).attach($scope)
 
